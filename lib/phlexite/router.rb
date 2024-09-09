@@ -1,3 +1,5 @@
+require 'fileutils'
+
 class Phlexite::Router
   def initialize(base, site)
     @base = base
@@ -11,7 +13,7 @@ class Phlexite::Router
 
   def page(out_path, component)
     out = full_out_path(out_path)
-    system("mkdir -p #{File::dirname(out)}")
+    FileUtils::mkdir_p File::dirname(out)
     File::write(out, component.call)
   end
 
