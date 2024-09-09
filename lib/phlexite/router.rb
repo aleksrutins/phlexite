@@ -17,6 +17,12 @@ class Phlexite::Router
     File::write(out, component.call)
   end
 
+  def mount(local_directory, on:)
+    out = full_out_path(on)
+    FileUtils::mkdir_p out
+    FileUtils::cp_r File::join(local_directory, "."), out
+  end
+
 private
 
   def full_out_path(out_path)

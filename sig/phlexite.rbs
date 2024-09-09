@@ -8,6 +8,7 @@ module Phlexite
     def initialize: (String, Site) -> void
     def page: (String, untyped) -> void
     def group: (String) { (Router) -> void } -> void
+    def mount: (String, on: String) -> void
 
     private
     def full_out_path: (String) -> String

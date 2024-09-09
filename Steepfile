@@ -6,6 +6,7 @@ target :lib do
   check "lib"                       # Directory name
   # ignore "lib/templates/*.rb"
 
+  library "fileutils"
   # library "pathname"              # Standard libraries
   # library "strong_json"           # Gems
   # library "phlex"
