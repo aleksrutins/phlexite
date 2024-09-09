@@ -1,0 +1,25 @@
+module Phlexite
+  VERSION: String
+  # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+  class Error < StandardError
+  end
+
+  class Router
+    def initialize: (String, Site) -> void
+    def page: (String, untyped) -> void
+    def group: (String) { (Router) -> void } -> void
+
+    private
+    def full_out_path: (String) -> String
+  end
+
+  class Site < Router
+    def initialize: () { (Site) -> void } -> void
+
+    def build_dir: () -> String
+    def build_dir=: (String) -> void
+
+    def base_url: () -> String
+    def base_url=: (String) -> void
+  end
+end
