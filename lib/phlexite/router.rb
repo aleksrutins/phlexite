@@ -10,10 +10,13 @@ class Phlexite::Router
   end
 
   def page(out_path, component)
-    File::write(full_out_path(out_path), component.call)
+    out = full_out_path(out_path)
+    system("mkdir -p #{File::dirname(out)}")
+    File::write(out, component.call)
   end
 
 private
+
   def full_out_path(out_path)
     File::join(@site.build_dir, @site.base_url, @base, out_path)
   end

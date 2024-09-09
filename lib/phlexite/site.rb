@@ -7,7 +7,8 @@ class Phlexite::Site < Phlexite::Router
 
   def initialize
     super("/", self)
-    base_url = "/"
+    @build_dir = "_build"
+    @base_url = "/"
     yield self
   end
 end
