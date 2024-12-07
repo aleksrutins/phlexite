@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'router.rb'
+require_relative "router"
 
 class Phlexite::Site < Phlexite::Router
   attr_accessor :build_dir, :base_url

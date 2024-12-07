@@ -12,10 +12,10 @@ class TestPhlexite < Minitest::Test
   end
 
   def test_that_site_is_defined
-    assert ::Phlexite::Site != nil
+    assert !::Phlexite::Site.nil?
   end
 
   def test_that_router_is_defined
-    assert ::Phlexite::Router != nil
+    assert !::Phlexite::Router.nil?
   end
 end

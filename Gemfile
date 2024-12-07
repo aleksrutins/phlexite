@@ -13,4 +13,4 @@ gem "standard", "~> 1.3"
 
 gem "phlex", "~> 1.11"
 
-gem "steep", "~> 1.7", :group => :development
+gem "steep", "~> 1.7", group: :development
