@@ -24,7 +24,8 @@ tasks:
       bundle config set path vendor/bundle
       bundle install
       bundle exec ruby build.rb
-  - docs-pack: cd phlexite/docs/_build
+  - docs-pack: |
+      cd phlexite/docs/_build
       tar -cvz . > ../../../site.tar.gz
   - upload: |
       hut pages publish -d $site site.tar.gz
