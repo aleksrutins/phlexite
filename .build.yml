@@ -1,0 +1,35 @@
+image: alpine/edge
+
+packages:
+  - ruby
+  - ruby-dev
+  - ruby-bundler
+  - podman
+
+oauth: pages.sr.ht/PAGES:RW
+
+secrets:
+  - 024294cc-ae52-4f6e-a71a-fb566d28e60c
+
+environment:
+  site: phlexite.farthergate.com
+
+sources:
+  - https://git.sr.ht/~aleksrutins/phlexite
+  - https://git.sr.ht/~aleksrutins/cicada
+
+tasks:
+  - docs-build: |
+      cd phlexite/docs
+      bundle install --path vendor/bundle
+      bundle exec ruby build.rb
+  - docs-pack: cd phlexite/docs/_build
+      tar -cvz . > ../../../site.tar.gz
+  - upload: |
+      hut pages publish -d $site site.tar.gz
+  - gem: |
+      cd phlexite
+      if (../cicada/cicada commit '[release'); then
+        gem build *.gemspec
+        gem push *.gem
+      fi

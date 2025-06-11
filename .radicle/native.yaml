@@ -1,7 +1,0 @@
-shell: |
-  if (cicada tag); then
-    gem build *.gemspec
-    gem push *.gem
-  fi
-  podman run -it -v ./docs:/site:z quay.io/aspr/phlexite:latest
-  cp -r docs/_build/* /srv/docs/phlexite/
