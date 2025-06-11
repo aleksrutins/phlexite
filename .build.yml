@@ -21,7 +21,8 @@ sources:
 tasks:
   - docs-build: |
       cd phlexite/docs
-      bundle install --path vendor/bundle
+      bundle config set path vendor/bundle
+      bundle install
       bundle exec ruby build.rb
   - docs-pack: cd phlexite/docs/_build
       tar -cvz . > ../../../site.tar.gz
