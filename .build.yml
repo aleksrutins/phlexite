@@ -5,6 +5,7 @@ packages:
   - ruby-dev
   - ruby-bundler
   - podman
+  - hut
 
 oauth: pages.sr.ht/PAGES:RW
 
