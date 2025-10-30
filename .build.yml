@@ -32,7 +32,7 @@ tasks:
       hut pages publish -d $site site.tar.gz
   - gem: |
       cd phlexite
-      if (../cicada/cicada commit '[release'); then
+      if (../cicada/cicada commit '\[release'); then
         gem build *.gemspec
         gem push *.gem
       fi
