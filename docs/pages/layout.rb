@@ -13,9 +13,12 @@ module Phlexite::Docs::Pages
         end
         body(style: 'padding: 0; margin: 0; display: flex; flex-direction: row; height: 100vh; width: 100vw;') do
           aside(style: 'padding: 30px; min-width: 15%; border-right: 1px solid #6F7887;') do
-            nav do
+            nav(style: 'display: flex; flex-direction: column; justify-content: space-between; height: 100%;') do
               ul do
                 li { a(href: '/') { 'Home' } }
+              end
+              ul do
+                li(style: 'padding:0') { a(href: 'https://sr.ht/~aleksrutins/phlexite' ) { 'SourceHut' } }
               end
             end
           end
