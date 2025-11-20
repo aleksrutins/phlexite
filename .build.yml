@@ -6,6 +6,7 @@ packages:
   - ruby-bundler
   - podman
   - hut
+  - bun
 
 oauth: pages.sr.ht/PAGES:RW
 
@@ -22,9 +23,10 @@ sources:
 tasks:
   - docs-build: |
       cd phlexite/docs
+      bun ci
       bundle config set path vendor/bundle
       bundle install
-      bundle exec ruby build.rb
+      TAILWINDCSS_INSTALL_DIR=node_modules/.bin bundle exec ruby build.rb
   - docs-pack: |
       cd phlexite/docs/_build
       tar -cvz . > ../../../site.tar.gz
