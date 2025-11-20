@@ -15,7 +15,7 @@ Phlexite::Site.new do |s|
   s.mount 'assets', on: '/'
   Tailwindcss::Phlexite.build(s, 'tailwind.css', 'site.css')
 
-  pages = Phlexite::Content::Collection.new('pages/docs/*.md', Phlexite::Docs::Pages::MarkdownPage, prefix: 'pages/docs')
+  pages = Phlexite::Content::Collection.new('pages/docs/**/*.md', Phlexite::Docs::Pages::MarkdownPage, prefix: 'pages/docs')
 
   pages.build(s)
 end
