@@ -9,10 +9,10 @@ module Phlexite::Docs::Pages
           meta name: 'viewport', content: 'width=device-width, initial-scale=1.0'
           title { 'Phlexite' }
 
-          link rel: 'stylesheet', href: '/pico.amber.min.css'
+          link rel: 'stylesheet', href: '/site.css'
         end
-        body(style: 'padding: 0; margin: 0; display: flex; flex-direction: row; height: 100vh; width: 100vw;') do
-          aside(style: 'padding: 30px; min-width: 15%; border-right: 1px solid #6F7887;') do
+        body(class: 'flex flex-row w-screen h-screen p-0 m-0 dark:bg-gray-900 dark:text-gray-50') do
+          aside(class: 'p-5 min-w-[15%] border-r border-gray-200 dark:border-gray-700') do
             nav(style: 'display: flex; flex-direction: column; justify-content: space-between; height: 100%;') do
               ul do
                 li { a(href: '/') { 'Home' } }

@@ -1,9 +1,20 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    front_matter_parser (1.0.1)
+    kramdown (2.5.1)
+      rexml (>= 3.3.9)
     phlex (2.3.1)
       zeitwerk (~> 2.7)
     phlexite (0.1.3)
+    phlexite-content (0.1.0)
+      front_matter_parser
+      phlex
+    rexml (3.4.4)
+    tailwindcss-phlexite (0.1.0)
+      tailwindcss-ruby (~> 4.1)
+    tailwindcss-ruby (4.1.16)
+    tailwindcss-ruby (4.1.16-x86_64-linux-gnu)
     zeitwerk (2.7.3)
 
 PLATFORMS
@@ -11,8 +22,11 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  kramdown (~> 2.5)
   phlex (~> 2.3)
   phlexite (~> 0.1.3)
+  phlexite-content (~> 0.1.0)
+  tailwindcss-phlexite (~> 0.1.0)
 
 BUNDLED WITH
    2.6.9
